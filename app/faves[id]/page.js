@@ -1,15 +1,14 @@
 import { items } from "./data";
-import Hero from "./components/Hero";
-import CardGrid from "./components/CardGrid";
 
-export default function Home() {
+export default async function FaveDetail({ params }) {
+    const { id } = await params;
+    const item = items.find((i) => String(i.id) === id);
+
+    if (!item) {
     return (
-    <main>
-    <Hero
-    title="DRAGON MOTOR TESTING"
-    tagline="AN EXPLORATION OF THE WORLD'S FASTEST CARS"
-    />
-    <CardGrid items={items} />
-    </main>
+        <main>
+        <p>Sorry, that one doesn't exist.</p>
+        </main>
     );
+    }
 }
