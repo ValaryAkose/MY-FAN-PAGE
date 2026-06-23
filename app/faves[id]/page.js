@@ -1,4 +1,4 @@
-import { items } from "./data";
+import { items } from "../data";
 
 export default async function FaveDetail({ params }) {
     const { id } = await params;
